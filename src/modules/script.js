@@ -24,10 +24,6 @@ form.addEventListener("submit", function (e) {
 
   searchingResults.innerHTML = "";
 
-  const octokit = new Octokit({
-    auth: "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",
-  });
-
   fetch(
     `https://api.github.com/search/repositories?${queryParams.toString()}`,
     {
