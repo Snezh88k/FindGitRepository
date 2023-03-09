@@ -24,12 +24,15 @@ form.addEventListener("submit", function (e) {
 
   searchingResults.innerHTML = "";
 
+  const octokit = new Octokit({
+    auth: "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",
+  });
+
   fetch(
     `https://api.github.com/search/repositories?${queryParams.toString()}`,
     {
       headers: {
         Accept: "application/vnd.github+json",
-        Authorization: "Bearer 36f341cace6bb1beb12951d14d3589c298c05516",
       },
     }
   )
