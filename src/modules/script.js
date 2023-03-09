@@ -30,7 +30,7 @@ form.addEventListener("submit", function (e) {
       headers: {
         Accept: "application/vnd.github+json",
         Authorization:
-          "Bearer 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",
+          "Bearer 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",
       },
     }
   )
