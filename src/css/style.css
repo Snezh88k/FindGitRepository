@@ -44,6 +44,10 @@ body {
   cursor: pointer;
   color: #edf5e1;
 }
+
+#btn_search:disabled {
+  background-color: grey;
+}
 .result {
   background-color: #379683;
   border: 2px solid #edf5e1;
