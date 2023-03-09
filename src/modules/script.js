@@ -7,6 +7,7 @@ console.log("query string", queryParams.toString());
 
 const form = document.getElementById("form");
 const search_bar = document.getElementById("search_bar");
+const search_btn = document.getElementById("btn_search");
 const searchingResults = document.querySelector(".searching_results");
 
 function createBlockWithResult(inner) {
@@ -18,6 +19,7 @@ function createBlockWithResult(inner) {
 }
 
 form.addEventListener("submit", function (e) {
+  search_btn.disabled = true;
   e.preventDefault();
   console.log("botton");
   queryParams.set("q", `${search_bar.value} in:name`);
@@ -60,5 +62,6 @@ form.addEventListener("submit", function (e) {
     })
     .catch((error) => {
       createBlockWithResult(`<div>${error?.message}</div>`);
-    });
+    })
+    .finally(() => (search_btn.disabled = false));
 });
